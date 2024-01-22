@@ -1,0 +1,14 @@
+java-code:
+  - src/main/java/**/*
+
+java-tests:
+  - src/test/java/**/*
+
+documentation:
+  - docs/**/*
+
+maven:
+  - pom.xml
+
+workflows:
+  - .github/workflows/**/*
