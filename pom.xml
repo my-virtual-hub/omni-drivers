@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>br.com.myvirtualhub</groupId>
+        <artifactId>omni-parent</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>omni-drivers</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>omni-drivers</name>
+    <description>Omni Drivers (Applications)</description>
+    <url>https://omni.myvirtualhub.com.br</url>
+
+    <properties>
+        <repo-pkg-github>my-virtual-hub/omni-drivers</repo-pkg-github>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>alternative-repo-public</id>
+            <name>My Virtual Hub Maven Public Packages</name>
+            <url>https://nexus.myvirtualhub.com.br/repository/myvirtualhub-public/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>br.com.myvirtualhub</groupId>
+            <artifactId>omni-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>br.com.myvirtualhub</groupId>
+            <artifactId>omni-ports-inbound</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+</project>
