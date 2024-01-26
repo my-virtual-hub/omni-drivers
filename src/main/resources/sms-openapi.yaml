@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  title: SMS Sending API
+  version: 1.0.0
+paths:
+  /sendSms:
+    post:
+      summary: Sends an SMS message
+      operationId: sendSms
+      tags:
+        - SMS
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - recipient
+                - message
+                - clientMessageId
+              properties:
+                from:
+                  type: string
+                  nullable: true
+                recipient:
+                  type: object
+                  required:
+                    - phoneNumber
+                  properties:
+                    phoneNumber:
+                      type: string
+                message:
+                  type: object
+                  required:
+                    - content
+                    - encodingType
+                  properties:
+                    content:
+                      type: string
+                    encodingType:
+                      type: string
+                clientMessageId:
+                  type: string
+      responses:
+        '200':
+          description: SMS message successfully sent
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  omniProcessId:
+                    type: string
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Resource not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+        - api_key: []
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: "NOT_FOUND"
+        message:
+          type: string
+          example: "The requested resource was not found."
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorDetail'
+    ErrorDetail:
+      type: object
+      properties:
+        detail:
+          type: string
+          example: "Specific error detail."
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-omni-token
+      in: header

@@ -38,13 +38,7 @@ This project operates independently and its progression depends on availability 
 
 ## License
 
-This software is governed by the BSD 2-Clause License. This is a free software license with minimal restrictions on redistribution, providing flexibility for both private and commercial use. The BSD license is compatible with many other open source licenses, making it a popular choice for software distribution.
-
-For more information about the BSD 2-Clause License and its terms, please visit the official license link:
-
-[BSD 2-Clause License](https://opensource.org/licenses/BSD-2-Clause)
-
-![Approved License](images/approved-license.png)
+Omni Communicator is Open Source software released under the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.html).
 
 ## Contact
 
