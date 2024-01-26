@@ -21,6 +21,10 @@
     <properties>
         <repo-pkg-github>my-virtual-hub/omni-drivers</repo-pkg-github>
         <spring-version>3.2.2</spring-version>
+
+        <!-- Fix Vulnerability -->
+        <json-path-vulnerability>2.9.0</json-path-vulnerability>
+
     </properties>
 
     <repositories>
@@ -34,11 +38,6 @@
     <dependencies>
         <dependency>
             <groupId>br.com.myvirtualhub</groupId>
-            <artifactId>omni-commons</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>br.com.myvirtualhub</groupId>
             <artifactId>omni-ports-inbound</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -48,15 +47,36 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
+        <!-- Only Runtime to local execution -->
+        <dependency>
+            <groupId>br.com.myvirtualhub</groupId>
+            <artifactId>omni-domain</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope>
         </dependency>
 
         <!-- Fix Vulnerability -->
         <dependency>
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
-            <version>2.9.0</version>
+            <version>${json-path-vulnerability}</version>
         </dependency>
     </dependencies>
 
