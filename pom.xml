@@ -24,7 +24,6 @@
 
         <!-- Fix Vulnerability -->
         <json-path-vulnerability>2.9.0</json-path-vulnerability>
-
     </properties>
 
     <repositories>

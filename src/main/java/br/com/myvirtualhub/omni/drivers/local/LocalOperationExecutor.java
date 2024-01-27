@@ -28,7 +28,7 @@ import org.springframework.stereotype.Component;
  * It scans initializers and performs the necessary tasks.
  */
 @Component
-@Profile("local")
+@Profile({"local", "prod"})
 public class LocalOperationExecutor {
 
     private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(LocalOperationExecutor.class);
